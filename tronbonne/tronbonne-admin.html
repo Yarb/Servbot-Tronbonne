@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>I am Tron Bonne, be afraid, be very afraid!</title>
+        <style type="text/css">
+            body {
+                font-family: "Courier New", sans-serif;
+                text-align: center;
+            }
+            .buttons {
+                font-size: 1em;
+                display: block;
+                justify-content: center;
+            }
+            .button, .value {
+                line-height: 1;
+                padding: 1rem;
+                margin: 1rem;
+                border: medium solid;
+                min-height: 1em;
+                min-width: 1em;
+            }
+            .button {
+                cursor: pointer;
+                user-select: none;
+            }
+            .value {
+                min-width: 2em;
+            }
+            .state {
+                display: block;
+                font-size: 1em;
+            }
+            .keystate {
+                display: block;
+            }
+            .controls {
+                display: none;
+                justify-content: center;
+            }
+            table {
+                justify-content: center;
+                display: flex;
+            }
+            td#key1 {
+                font-weight: bold;
+            }
+            td#key2 {
+                font-weight: bold;
+            }
+            .error {
+                color: red;
+            }
+            #users1 {
+                font-style: italic;
+            }
+            #users2 {
+                font-style: italic;
+            }
+        </style>
+    </head>
+    <body oncontextmenu="return false">
+        <div class="state">
+            Status: <span class="users">Not logged in</span>
+        </div>
+        <div class="error">
+            
+        </div>
+		<div class="login">
+			<form action="javascript:;" onsubmit="connect()">
+				Username: <input type=text id="username"><br>
+				Admin token:   <input type=text id="Secret"><br>
+				<input type=submit value="Connect">
+			</form>
+        </div>
+        <div class="controls">
+            <div>
+                <b>Admin key:</b> <div id="adminkey">---</div>
+            </div>
+            <hr>
+            <table class="session1">
+                <tr>
+                    <th colspan="13">Session 1 status:</th>
+                </tr>
+                <tr>
+                    <td colspan = "7">Session token:</td>
+                    <td id="key1" colspan="6">-----</td>
+                </tr>
+                <tr id="buttons">
+                    <td></td>
+                    <td class="up">UP</td>
+                    <td class="down">DWN</td>
+                    <td class="left">LFT</td>
+                    <td class="right">RGT</td>
+                    <td class="A">A</td>
+                    <td class="B">B</td>
+                    <td class="C">C</td>
+                    <td class="X">X</td>
+                    <td class="Y">Y</td>
+                    <td class="Z">Z</td>
+                    <td class="esc">ESC</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td colspan="13">Users:</td>
+                </tr>
+                <tr>
+                    <td colspan="13" id="users1">--</td>
+                </tr>
+            </table>
+            <div class=keyboard>
+                Player one control:
+                <button onmousedown="keydown(0,1)" onmouseup="keyup(0,1)">up</button>
+                <button onmousedown="keydown(1,1)" onmouseup="keyup(1,1)">down</button>
+                <button onmousedown="keydown(2,1)" onmouseup="keyup(2,1)">left</button>
+                <button onmousedown="keydown(3,1)" onmouseup="keyup(3,1)">right</button>
+                <button onmousedown="keydown(4,1)" onmouseup="keyup(4,1)">A</button>
+                <button onmousedown="keydown(5,1)" onmouseup="keyup(5,1)">B</button>
+                <button onmousedown="keydown(6,1)" onmouseup="keyup(6,1)">C</button>
+                <button onmousedown="keydown(7,1)" onmouseup="keyup(7,1)">X</button>
+                <button onmousedown="keydown(8,1)" onmouseup="keyup(8,1)">Y</button>
+                <button onmousedown="keydown(9,1)" onmouseup="keyup(9,1)">Z</button>
+             </div>
+            <hr>
+            <table class="session2">
+                <tr>
+                    <th colspan="13">Session 2 status:</th>
+                </tr>
+                <tr>
+                    <td colspan = "7">Session token:</td>
+                    <td id="key2" colspan="6">-----</td>
+                </tr>
+                <tr id="buttons">
+                    <td></td>
+                    <td class="up">UP</td>
+                    <td class="down">DWN</td>
+                    <td class="left">LFT</td>
+                    <td class="right">RGT</td>
+                    <td class="A">A</td>
+                    <td class="B">B</td>
+                    <td class="C">C</td>
+                    <td class="X">X</td>
+                    <td class="Y">Y</td>
+                    <td class="Z">Z</td>
+                    <td class="esc">ESC</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td colspan="13">Users:</td>
+                </tr>
+                <tr>
+                    <td colspan="13" id="users2">--</td>
+                </tr>
+            </table>
+            <div class=keyboard>
+                Player two control:
+                <button onmousedown="keydown(0,2)" onmouseup="keyup(0,2)">up</button>
+                <button onmousedown="keydown(1,2)" onmouseup="keyup(1,2)">down</button>
+                <button onmousedown="keydown(2,2)" onmouseup="keyup(2,2)">left</button>
+                <button onmousedown="keydown(3,2)" onmouseup="keyup(3,2)">right</button>
+                <button onmousedown="keydown(4,2)" onmouseup="keyup(4,2)">A</button>
+                <button onmousedown="keydown(5,2)" onmouseup="keyup(5,2)">B</button>
+                <button onmousedown="keydown(6,2)" onmouseup="keyup(6,2)">C</button>
+                <button onmousedown="keydown(7,2)" onmouseup="keyup(7,2)">X</button>
+                <button onmousedown="keydown(8,2)" onmouseup="keyup(8,2)">Y</button>
+                <button onmousedown="keydown(9,2)" onmouseup="keyup(9,2)">Z</button>
+            </div>
+            <hr>
+            <div>
+                Player Virtual Keyboard output: <span class="keystate">Not logged in</span>
+            </div>
+            <div>
+                <button onclick="enableKeys()">Enable keys</button>
+                <button onclick="disableKeys()">Disable keys</button>
+            </div>
+            <div>
+                <br>
+                Session reset. Type "Yes" to restart session: 
+                <input type=text id="confirm" value="No">
+                <button onclick="resetSession()">Reset</button>
+            </div>
+        </div>
+        <script src="tronbonne-admin.js">
+        </script>
+    </body>
+</html>
+

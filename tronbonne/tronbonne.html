@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>I am Tron Bonne, be afraid, be very afraid!</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body ondragstart="return false;" ondrop="return false;" oncontextmenu="return false" onkeydown="keypress(event, 1)" onkeyup="keypress(event, 0)">
+        <div id="upper">
+            <div class="buttons" id="dpad" draggable="false">
+                <div id="dtop">
+                    <img class="up button" draggable="false" src="images/up_up.png">
+                </div>
+                <div id="dmiddle">
+                    <img class="left button" draggable="false" src="images/lf_up.png">
+                    <img class="right button"draggable="false" src="images/rt_up.png">
+                </div>
+                <div id="dbottom">
+                    <img class="down button" draggable="false" src="images/dw_up.png">
+                </div>
+            </div>  
+            <div class="buttons" id="center_padding">
+            </div>
+            <div class="buttons" id="abcxyz" draggable= "false">
+                <div id="btop">
+                </div>
+                <div id="dmiddle">
+                    <img class="A button" draggable="false" src="images/r_up.png">
+                    <img class="B button" draggable="false" src="images/g_up.png">
+                    <img class="C button" draggable="false" src="images/b_up.png">
+                </div>
+                <div id="dbottom">
+                    <img class="X button" draggable="false" src="images/y_up.png">
+                    <img class="Y button" draggable="false" src="images/w_up.png">
+                    <img class="Z button" draggable="false" src="images/bl_up.png">
+                </div>
+            </div>
+        </div>    
+        <div id="lower">
+            <h1>Glorious Tron Bonne control scheme!
+            </h1>
+            <div class="login">
+                <form action="javascript:;" onsubmit="connect()">
+                    <table>
+                        <tr>
+                            <td>Player name: </td>
+                            <td><input type=text id="username"></td>
+                        </tr>
+                        <tr>
+                            <td>Session key:</td>
+                            <td><input type=text id="Secret"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <input type=submit value="Connect">
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+            <div class="state">
+                <span class="users">Please type your name and given session key</span>
+            </div>
+            <div class="error">
+            </div>
+            
+            <br>
+            <footer>
+            <img src="images/TronB.jpg"></img>
+            </footer>
+        </div>
+        <script src="tronbonne.js">
+        </script>
+    </body>
+</html>
